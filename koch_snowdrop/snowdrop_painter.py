@@ -18,9 +18,10 @@ def draw_koch_curve(order, size=300):
     t.goto(-size / 2, 0)
     t.pendown()
 
-    koch_curve(t, order, size)
+    for _ in range(3):
+      koch_curve(t, order, size)
+      t.right(120)
 
     window.mainloop()
 
-# Виклик функції
-draw_koch_curve(2)
+draw_koch_curve(3)
