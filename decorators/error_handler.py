@@ -3,5 +3,5 @@ def input_error(func):
         try:
             return func(*args, **kwargs)
         except (KeyError, ValueError, IndexError) as e:
-            return str(e)
+            print(str(e))
     return inner

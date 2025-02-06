@@ -22,6 +22,3 @@ class Filler:
         destination.parent.mkdir(parents=True, exist_ok=True)
         with open(source, 'rb') as src, open(destination, 'wb') as dst:
             dst.write(src.read())
-
-filler = Filler("Temp")
-filler.recursive_copy()
