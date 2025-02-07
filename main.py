@@ -44,9 +44,15 @@ def main():
         elif command == "hello":
             print("How can I help you?")
         elif command in ["copy", "1"]:
-            parent_folder_path = Path("Temp")
-            file_generator(parent_folder_path)
-            filler = Filler("Temp")
+            # parent_folder_path = Path("Temp") #<--- uncomment these two lines if you want to generate files and directories
+            # file_generator(parent_folder_path)
+            if len(args) < 1:
+                print("Please enter a path to a folder.")
+                continue
+            if len(args) == 2:
+                filler = Filler(args[0], args[1])
+            else: 
+                filler = Filler(args[0])
             filler.recursive_copy()
         elif command in ["koch", "2"]:
             if len(args) != 1:
